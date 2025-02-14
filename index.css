@@ -52,6 +52,16 @@ button:hover{
     background-color: var(--color1);
 }
 
+.oscurecer{
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 99;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: none;
+    margin: 0;
+}
+
 /*Estilos header*/
 
 header{
@@ -61,6 +71,8 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 20px 150px;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+
     
 
 }
@@ -86,6 +98,13 @@ nav ul li:last-child{
     margin-right: 0;
 }
 
+.menuMovil{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    
+}
 /*Estilos generales section*/
 
 section{
@@ -94,6 +113,14 @@ section{
     height: 100vh;
     flex-direction: row;
     justify-content: center;
+}
+.contenedor{
+    display: flex;
+    justify-content: space-between;
+    
+    height: 100%;
+    width: 100%;
+
 }
 section div{
     margin-right: 20px;
@@ -130,6 +157,13 @@ section:not(.hero) div:last-child{
     width: 50%;
 }
 
+#menu-toggle{
+    display: none;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+
+}
 /*Estilos hero*/
 /*
 #videoHero{
@@ -154,7 +188,10 @@ section:not(.hero) div:last-child{
     
 }
 
-
+.hero .contenedor{
+    flex-direction: column;
+    height: 100%;
+}
 .imageHero{
     background-image: url(img//imagenHero.jpg);
     background-size: contain;
@@ -191,6 +228,18 @@ section:not(.hero) div:last-child{
         
 }
 
+.botones a{
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: var(--color2);
+    color: var(--color5);
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-family: Arial;
+}
+
 .botones button{
     display: inline-block;
     text-align: center;
@@ -220,16 +269,23 @@ section:not(.hero) div:last-child{
     display: flex;
     align-items: center;
 }
+
+#reseñas .contenedor{
+    justify-content: space-around;
+    display: flex;
+    height: 100%;
+
+}
 .tarjetas{
     height: 70%;
     display: flex;
     justify-content: space-around;
     align-items: start;
     flex-direction: column;
-    margin-right: 100px;
+    margin-right: 10%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-    padding: 50px;
+    padding: 10px;
 }
 .contenidoTarjeta{
     width: 300px;
@@ -251,7 +307,7 @@ section:not(.hero) div:last-child{
 #contactInfo{
     
     margin: 20px 0px;
-    height: 65vh;
+    height: 80vh;
 }
 
 .formContainer{
@@ -313,4 +369,120 @@ input:focus, textarea:focus {
 
 .temble:hover {
     animation: tremble 0.5s ease-in-out infinite;
+}
+
+
+@media (max-width:760px){
+    section{
+        margin: 0px;
+    }
+    .imageHero{
+        margin-right: 0px;
+    }
+    .heroContent{
+        margin: 10px 0px;
+
+    }
+
+    .botones{
+        flex-direction: column;
+        background-color: var(--color5);
+        box-shadow: none;
+        border-radius: 0%;
+        margin: 0px;
+        height: 55%;
+        width: 100%;
+        gap:10px
+    }
+    .button{
+        margin-bottom: 20px;
+    }
+    .contenedor{
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .image{
+        display: none;
+    }
+    .text{
+        width: 100%;
+    }
+    .fondo{
+        border-radius: 0px;
+    }
+    .tarjetas{
+        width: 100%;
+        height: 33%;
+        margin: 0px;
+        margin-bottom: 20px;
+        padding: 10px 0px;
+        justify-content: start;
+
+    }
+    .formContainer{
+        width: 100%;
+        border-radius: 0;
+        box-shadow: 0;
+    }
+
+    #header{
+        padding: 15px 0px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .menuMovil{
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 10px;
+        width: 100%;
+    }
+    nav{
+        z-index: 100;
+        position: absolute;
+        flex-direction: column;
+        transform: translate(-800px,0);
+        transition: transform .3s ease;
+        background-color: var(--color5);
+        top: 0;
+        padding: 0;
+        display: flex;
+        justify-content: flex-start;
+        height: 100%;
+    }
+    nav ul{
+        flex-direction: column;
+        display: flex;
+    }
+    nav li{
+        padding: 1em;
+    }
+    nav li a{
+        text-align: center;
+        padding: 1em;
+    }
+    nav a{
+        color: var(--color1);
+    }
+    #menu{
+        
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #57872b;
+        width: 100%;
+        text-align: center;
+
+    }
+
+    nav.active {
+        transform: translate(0,0);
+    }
+
+    #menu-toggle{
+        display: block;
+    }
 }

@@ -7,10 +7,14 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <div class="oscurecer"></div>
     <header id="header">
-        <a href="#info">
-            <span class="logo"> Ki'ibok</span>
-        </a>
+        <div class="menuMovil">
+            <a href="#info">
+                <span class="logo"> Ki'ibok</span>
+            </a>
+            <button id="menu-toggle"> ☰</button>
+        </div>
         <nav>
             
             <ul>
@@ -29,79 +33,89 @@
                 <source src="img/videoHero.mp4">
             </video>
             -->
-            <div class="imageHero"></div>
-            <div class="heroContent">
-                <h1>El poder de la aromaterapia en tu muñeca</h1>
-                <h2>Consiguelo hoy</h2>
-                <div class="botones">
-                    
-                    <button> Descarga nuestro catologo</button>
-                    
-                    <button> Contactanos</button>
+            <div class="contenedor">
+                
+                <div class="imageHero"></div>
+                <div class="heroContent">
+                    <h1>El poder de la aromaterapia en tu muñeca</h1>
+                    <h2>Consiguelo hoy</h2>
+                    <div class="botones">
+                        
+                        <button> Descarga nuestro catologo</button>
+                        <a href="#contactInfo" class="btn">Contactanos</a>
+                        
+                    </div>
+    
                 </div>
-
             </div>
         </section>
 
         <section id= "info" class="info">
-            <div class="image"></div>
-            <div class="text"> 
-                <div class="fondo">
-
-                    <h2>
-                        La pulser Ki 'ibok
-                    </h2>
-                    <p>
-                        Fabricada con materiales biodegradables, esta pulsera refleja un compromiso con la sostenibilidad ambiental.
-                        Su diseño versátil permite la personalización mediante la adición de dijes pero esta pulsera no solo es un accesorio estético, sino que representa un compromiso con el cuidado y la promoción de la
-                        salud mental en la vida cotidiana.
-                        La pulsera Ki 'ibok se erige como una herramienta integral para el cuidado de la salud mental
-                    </p> 
+            <div class="contenedor">
+                <div class="image"></div>
+                <div class="text"> 
+                    <div class="fondo">
+    
+                        <h2>
+                            La pulser Ki 'ibok
+                        </h2>
+                        <p>
+                            Fabricada con materiales biodegradables, esta pulsera refleja un compromiso con la sostenibilidad ambiental.
+                            Su diseño versátil permite la personalización mediante la adición de dijes pero esta pulsera no solo es un accesorio estético, sino que representa un compromiso con el cuidado y la promoción de la
+                            salud mental en la vida cotidiana.
+                            La pulsera Ki 'ibok se erige como una herramienta integral para el cuidado de la salud mental
+                        </p> 
+                    </div>
                 </div>
             </div>
 
         </section>
 
         <section id= "aboutUs" class="aboutUs">
-            <div class="text">
-                <div class="fondo">
-                    <h2>
-                        Sobre nosotros
-                    </h2>
-                    <p>
-
-                        Somos Ki 'ibok, nos enfocamos en el desarrollo de la pulsera Ki 'ibok asi como en su produccion con el fin de ayudar a nuestros clientes a
-                        abordar los desafíos emocionales y psicológicos ofreciendoles una forma natural de mantener una buena salud mental; tambien
-                        apostamos por una comunicación progresiva bilateral que nos permita reconocer las tendencias que hay dentro de la comunidad y actuamos en consecuencia
-                    </p>
+            <div class="contenedor">
+                <div class="text">
+                    <div class="fondo">
+                        <h2>
+                            Sobre nosotros
+                        </h2>
+                        <p>
+    
+                            Somos Ki 'ibok, nos enfocamos en el desarrollo de la pulsera Ki 'ibok asi como en su produccion con el fin de ayudar a nuestros clientes a
+                            abordar los desafíos emocionales y psicológicos ofreciendoles una forma natural de mantener una buena salud mental; tambien
+                            apostamos por una comunicación progresiva bilateral que nos permita reconocer las tendencias que hay dentro de la comunidad y actuamos en consecuencia
+                        </p>
+                    </div>
                 </div>
+                <div class="image"></div>
             </div>
-            <div class="image"></div>
         </section>
 
         <section id= "reseñas" class="reseñas">
-            <div class="tarjetas">
-                <div class="image"></div>
-                <div class="contenidoTarjeta">
-                    <h3>Nombre de cliente</h3>
-                    <p>Fecha</p>
-                    <p>Contenido de la reseña</p>
+            <div class="contenedor">
+
+                <div class="tarjetas">
+                    <div class="image"></div>
+                    <div class="contenidoTarjeta">
+                        <h3>Nombre de cliente</h3>
+                        <p>Fecha</p>
+                        <p>Contenido de la reseña</p>
+                    </div>
                 </div>
-            </div>
-            <div class="tarjetas">
-                <div class="image"></div>
-                <div class="contenidoTarjeta">
-                    <h3>Nombre de cliente</h3>
-                    <p>Fecha</p>
-                    <p>Contenido de la reseña</p>
+                <div class="tarjetas">
+                    <div class="image"></div>
+                    <div class="contenidoTarjeta">
+                        <h3>Nombre de cliente</h3>
+                        <p>Fecha</p>
+                        <p>Contenido de la reseña</p>
+                    </div>
                 </div>
-            </div>
-            <div class="tarjetas">
-                <div class="image"></div>
-                <div class="contenidoTarjeta">
-                    <h3>Nombra del cliente</h3>
-                    <p>Fecha</p>
-                    <p>Contenido de la reseña</p>
+                <div class="tarjetas">
+                    <div class="image"></div>
+                    <div class="contenidoTarjeta">
+                        <h3>Nombra del cliente</h3>
+                        <p>Fecha</p>
+                        <p>Contenido de la reseña</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -129,5 +143,7 @@
     <footer>
         <p>&copy; 2025 Ki'ibok. Todos los derechos reservados.</p>
     </footer>
+    <script src="js/hamburguesa.js"></script>
+
 </body>
 </html>
