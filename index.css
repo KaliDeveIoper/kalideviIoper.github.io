@@ -1,11 +1,13 @@
 /*Paleta de colores*/
 :root {
-    --color1: #57872b;
-    --color2: #91a550;
-    --color3: #cecc7f;
-    --color4: #e2e2ae;
-    --color5: #ededd8;
-    --negro: #1A1A1A;
+    --color1: #F7D1D1;
+    --color2: #F5A6A6;
+    --color3: #FE5DB0;
+    --color4: #F0C8A2;
+    --color5: #F2F3F4;
+    --color6:#D1D6D7;
+    --negro: #080808;
+    
 
     --colorRandom1: #87c0ad;
     --colorRandom2:#a1b66a;
@@ -17,14 +19,16 @@
 
 body{
     background-color: var(--color5);
-    color: var(--color1);
+    color: var(--negro);
+    font-family: "Quicksand", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
     margin: 0;
     padding: 0;
     
 }
-h1,h2{
-    color: var(--color2);
-}
+
 h3,h4,p,a,span{
     color: var(--negro)
 }
@@ -35,21 +39,27 @@ a{
 }
 
 .logo{
-    color: var(--color5);
+    color: #0F2A48;
+    font-size: 50px;
 }
 
 button{
     background-color: var(--color2);
-    color: var(--color5);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: var(--negro);
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1.1em;
     transition: 0.3s;
+    font-family: "Quicksand", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
 }
 button:hover{
-    background-color: var(--color1);
+    background-color: var(--color3);
+    color: var(--negro);
 }
 
 .oscurecer{
@@ -65,22 +75,55 @@ button:hover{
 /*Estilos header*/
 
 header{
-    background-color: var(--color1);
+    background-color: var(--color5);
 
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    padding: 20px 150px;
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
-
-    
-
+    padding: 30px 150px;
+}
+.menuMovil{
+    margin-bottom: 20px;
+}
+.fondoLogo{
+    border-radius: 35px;
+    padding: 0px 20px;
+    background-color: var(--color2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 header a{
-    color: var(--color5);
+    color: var(--negro);
+    position: relative;
+
+}
+header a:hover{
+    color: var(--color3);
+}
+header a:not(#excluirSubrayado)::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--negro);
+    transition: width 0.3s ease;
+
+}
+header a:not(#excluirSubrayado):hover::after{
+    width: 100%;
+    background-color: var(--color3);
+}
+
+
+nav{
+    width: 100%;
+    
 }
 nav ul{
     display: flex;
+    justify-content: space-between;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -90,9 +133,6 @@ nav ul li{
     margin-right: 20px;
 }
 
-nav ul a:hover{
-    color: var(--color4);
-}
 
 nav ul li:last-child{
     margin-right: 0;
@@ -104,6 +144,12 @@ nav ul li:last-child{
     justify-content: space-between;
     
     
+}
+.rellenoHeader{
+    margin-top: 20px;
+    height: 20px;
+    width: 100%;
+    background-color: var(--color2);
 }
 /*Estilos generales section*/
 
@@ -212,7 +258,6 @@ section:not(.hero) div:last-child{
     text-align: center;
     align-items: center;
     margin-top: 45px;
-    color: white;
 }
 .botones{
     display: flex;
@@ -220,10 +265,10 @@ section:not(.hero) div:last-child{
     justify-content:space-around;
     align-items: center;
     width: 50%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    
     padding: 10px 0px;
     margin-top: 10px;   
-    background-color: var(--color3);
+    
     border-radius: 10px;
         
 }
@@ -232,12 +277,14 @@ section:not(.hero) div:last-child{
     display: inline-block;
     padding: 10px 15px;
     background-color: var(--color2);
-    color: var(--color5);
+    color: var(--negro);
     text-decoration: none;
     border-radius: 5px;
-    text-align: center;
-    font-weight: bold;
-    font-family: Arial;
+    text-align: center; 
+    
+}
+.botones a:hover{
+    background-color: var(--color3);
 }
 
 .botones button{
@@ -251,12 +298,58 @@ section:not(.hero) div:last-child{
 
 /*Estilos seccion info*/
 
-#info .image{
-    background-image: url(img/imagenInfo.jpg);
+.slider-container {
+    position: relative;
+    width: 50%;
+    margin: auto;
+    overflow: hidden; /* Oculta las imágenes fuera del contenedor */
+  }
 
-}
+  
+  .slider {
+    width: 100%;
+    display: flex;
+    object-fit:fill;
+    transition: transform 0.5s ease; /* Desliza las imágenes */
+  }
+  
+  .slide {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  #info button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro para los botones */
+    color: white;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  #info button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .prev {
+    left: 0;
+  }
+  
+  .next {
+    right: 0;
+  }
+  
 #info .fondo{
     background-color: #87c0ad;
+}
+
+#info .text{
+    width: 40%;
 }
 
 /*Estilos seccion about us*/
@@ -435,7 +528,7 @@ input:focus, textarea:focus {
     .menuMovil{
         display: flex;
         justify-content: space-between;
-        padding: 0px 10px;
+        padding: 0px 0px;
         width: 100%;
     }
     nav{
@@ -447,9 +540,11 @@ input:focus, textarea:focus {
         background-color: var(--color5);
         top: 0;
         padding: 0;
+        left: 0;
         display: flex;
         justify-content: flex-start;
         height: 100%;
+        width: 60%;
     }
     nav ul{
         flex-direction: column;

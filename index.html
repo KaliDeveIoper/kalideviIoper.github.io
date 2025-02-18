@@ -4,14 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Ki'ibok</title>
+    <!--Estilos-->
     <link rel="stylesheet" href="index.css">
+
+    <!--Fuentes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="oscurecer"></div>
     <header id="header">
         <div class="menuMovil">
-            <a href="#info">
-                <span class="logo"> Ki'ibok</span>
+            <a id="excluirSubrayado" href="#info">
+                <div class="fondoLogo">
+                    <span class="logo"> Ki'ibok</span>
+                </div>
             </a>
             <button id="menu-toggle"> ☰</button>
         </div>
@@ -24,6 +32,7 @@
                 <li><a href="#reseñas"> Reseñas</a></li>
             </ul>
         </nav>
+        <div class="rellenoHeader"></div>
     </header>
 
     <main>
@@ -52,7 +61,16 @@
 
         <section id= "info" class="info">
             <div class="contenedor">
-                <div class="image"></div>
+                <div class="slider-container">
+                    <div class="slider">
+                      <img src="img/placeHolderCuadrado.png" alt="Imagen 1" class="slide">
+                      <img src="img/placeHolderCuadrado.png" alt="Imagen 2" class="slide">
+                      <img src="img/placeHolderCuadrado.png" alt="Imagen 3" class="slide">
+                    </div>
+                    <button class="nav-button prev" onclick="moveSlide(-1)">&#10094;</button>
+                    <button class="nav-button next" onclick="moveSlide(1)">&#10095;</button>
+                  </div>
+                  
                 <div class="text"> 
                     <div class="fondo">
     
@@ -144,6 +162,7 @@
         <p>&copy; 2025 Ki'ibok. Todos los derechos reservados.</p>
     </footer>
     <script src="js/hamburguesa.js"></script>
+    <script src="js/slider.js"></script>
 
 </body>
 </html>
