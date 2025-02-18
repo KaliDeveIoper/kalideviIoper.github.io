@@ -494,10 +494,17 @@ input:focus, textarea:focus {
         flex-direction: column;
         text-align: center;
         justify-content: center;
+        
     }
 
     .image{
         display: none;
+    }
+    .slider-container{
+        display: none;
+    }
+    #info .text{
+        width: 100%;
     }
     .text{
         width: 100%;
