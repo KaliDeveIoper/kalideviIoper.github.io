@@ -39,8 +39,11 @@ a{
 }
 
 .logo{
-    color: #0F2A48;
-    font-size: 50px;
+    font-family: "Forum", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--negro);
+    font-size: 4.5em;
 }
 
 button{
@@ -81,7 +84,7 @@ header{
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
-    padding: 30px 150px;
+    padding: 30px 5%;
 }
 .menuMovil{
     margin-bottom: 20px;
@@ -155,7 +158,7 @@ nav ul li:last-child{
 
 section{
     display: flex;
-    margin: 0px 150px;
+    margin: 0px 5%;
     height: 100vh;
     flex-direction: row;
     justify-content: center;
@@ -301,7 +304,6 @@ section:not(.hero) div:last-child{
 .slider-container {
     position: relative;
     width: 50%;
-    margin: auto;
     overflow: hidden; /* Oculta las imágenes fuera del contenedor */
   }
 
