@@ -270,7 +270,7 @@ section:not(.hero) div:last-child{
     flex-direction: column;
     text-align: center;
     align-items: center;
-    margin-top: 45px;
+    margin-top: 10px;
 }
 .botones{
     display: flex;
@@ -379,9 +379,12 @@ section:not(.hero) div:last-child{
     align-items: center;
 }
 #aboutUs .image{
-    background-image: url(img/imagenAboutUs.jpg);
+    background-image: url(img/placeHolderCuadrado.png);
     height: 60vh;
 
+}
+#aboutUs .fondo{
+    background-color: var(--color2);
 }
 /*Estilos seccion reseñas*/
 #reseñas{
@@ -420,7 +423,7 @@ section:not(.hero) div:last-child{
     height: 50%;
     width: 100%;
     margin: 0px;
-    background-image: url(img/placeHolder.jpg);
+    background-image: url(img/placeHolderCuadrado.png);
 }
 /*Estilos seccion contacto*/
 
@@ -524,17 +527,19 @@ input:focus, textarea:focus {
         
     }
 
-    .image{
+    #reseñas .image{
         display: none;
     }
     .slider-container{
-        display: none;
+        height: 100%;
+        width: 100%;
     }
     #info .text{
         width: 100%;
     }
     .text{
         width: 100%;
+        margin-right: 0;
     }
     .fondo{
         border-radius: 0px;
