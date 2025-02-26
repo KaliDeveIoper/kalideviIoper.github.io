@@ -248,7 +248,7 @@ section:not(.hero) div:last-child{
 
 #contenedorVideoHero{
     display: flex;
-    height: 50%;
+    height: 65%;
     
 }
 .imageHero{
@@ -263,7 +263,7 @@ section:not(.hero) div:last-child{
     margin-top: 20px;
 }
 .heroContent{
-    height: 50%;
+    height: 35%;
     display: flex;
     position: relative;
     z-index: 1;
