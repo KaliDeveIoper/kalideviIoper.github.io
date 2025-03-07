@@ -1,8 +1,8 @@
 /*Paleta de colores*/
 :root {
-    --color1: #F7D1D1;
-    --color2: #F5A6A6;
-    --color3: #FE5DB0;
+    --color1: #43c241;
+    --color2: #0A4D09;
+    --color3: #053304;
     --color4: #F0C8A2;
     --color5: #F2F3F4;
     --color6:#D1D6D7;
@@ -290,10 +290,10 @@ section:not(.hero) div:last-child{
     display: inline-block;
     padding: 10px 15px;
     background-color: var(--color2);
-    color: var(--negro);
+    color: white;
     text-decoration: none;
     border-radius: 5px;
-    text-align: center; 
+    text-align: center;
     
 }
 .botones a:hover{
@@ -303,7 +303,7 @@ section:not(.hero) div:last-child{
 .botones button{
     display: inline-block;
     text-align: center;
-    
+    color: white;
     width: 200px;
     padding: 10px;
     flex-shrink: 0px;
@@ -433,6 +433,11 @@ section:not(.hero) div:last-child{
     height: 80vh;
 }
 
+#contactInfo h3{
+    
+    color: white;
+}
+
 .formContainer{
     background-color: var(--color3);
     padding: 20px;
@@ -448,6 +453,7 @@ label{
     display: block;
     font-weight: bold;
     margin: 10px 0 5px;
+    color: white;
 }
 input, textarea {
     width: 90%;
@@ -466,6 +472,7 @@ input:focus, textarea:focus {
 .formContainer button{
     margin-top: 10px;
     width: 100%;
+    color: white;
 }
 .formContainer button:hover{
     transform: scale(1.5);
