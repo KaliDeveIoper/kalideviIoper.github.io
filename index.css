@@ -1,9 +1,11 @@
+
 :root{
     --colorFondo: #F2F2F2;
     --colorPrincipal: #0A4D09;
     --colorPrincipalFuerte: #083d07;
     --colorPrincipalDiluido: #00FF00;
 }
+
 
 *{
     margin: 0;
