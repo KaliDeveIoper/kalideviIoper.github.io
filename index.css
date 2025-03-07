@@ -1,107 +1,156 @@
-/*Paleta de colores*/
-:root {
-    --color1: #F7D1D1;
-    --color2: #F5A6A6;
-    --color3: #FE5DB0;
-    --color4: #F0C8A2;
-    --color5: #F2F3F4;
-    --color6:#D1D6D7;
-    --negro: #080808;
-    
-
-    --colorRandom1: #87c0ad;
-    --colorRandom2:#a1b66a;
-    --colorRandom3: #d5d9e2
+:root{
+    --colorFondo: #F2F2F2;
+    --colorPrincipal: #0A4D09;
+    --colorPrincipalFuerte: #083d07;
+    --colorPrincipalDiluido: #00FF00;
 }
 
-/*Estilos generales*/
-
-
-body{
-    background-color: var(--color5);
-    color: var(--negro);
-    font-family: "Quicksand", serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
+*{
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
     
 }
-
-h3,h4,p,a,span{
-    color: var(--negro)
+html body{
+    height: 100%;
 }
-
-a{
-    
+body{
+    background-color: var(--colorFondo);  
+    padding: 0 5%;  
+}
+h1,h2,h3,p,a{
+    color: black;
     text-decoration: none;
 }
-
-.logo{
-    font-family: "Forum", serif;
-    font-weight: 400;
-    font-style: normal;
-    color: var(--negro);
-    font-size: 4.5em;
-}
-
-button{
-    background-color: var(--color2);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    color: var(--negro);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-    font-family: "Quicksand", serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-}
-button:hover{
-    background-color: var(--color3);
-    color: var(--negro);
-}
-
-.oscurecer{
-    background-color: rgba(0, 0, 0, 0.3);
-    z-index: 99;
-    position: absolute;
-    height: 100%;
+section{
+    min-height: 100vh;
+    height: 100vh;
     width: 100%;
-    display: none;
-    margin: 0;
+    margin-top: 10% ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+
 }
+.contenedor{
+    margin: 0 auto;
+    width: 40%;
+    
+}
+
+#imagen{
+    width: 45%;
+    
+    overflow: hidden;
+    
+}
+
+video{
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+img{
+    object-fit: cover;
+    width: 100%;
+    border-radius: 8px;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.boton{
+    font-size: 1.15em;
+    color: var(--colorFondo);
+    background-color: transparent;
+    padding: 15px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition:border-radius 0.5s ease;
+    
+    
+    
+}
+.textoBoton{
+    position: relative;
+    z-index: 1;
+}
+.boton::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--colorPrincipal);
+    width: 150%;
+    padding-top: 150%;
+    transition: 0.4s ease;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    border-radius: 999px;
+    top: 100%;
+    
+    
+    
+}
+
+.boton:hover{
+    color: var(--colorPrincipal);
+    
+    border-radius: 50px;
+    box-shadow: inset 0px 0px 0px 1px var(--colorPrincipal);
+    
+   
+}
+.boton:hover::after{
+    top: 400%;
+}
+
+
 
 /*Estilos header*/
 
 header{
-    background-color: var(--color5);
-
+    width: 100%;
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
+    justify-content:center;
     align-items: center;
-    padding: 30px 5%;
+    padding: 0 0;
+    padding-top: 20px;
+    
+    
 }
-.menuMovil{
-    margin-bottom: 20px;
-}
-.fondoLogo{
-    border-radius: 35px;
-    padding: 0px 20px;
-    background-color: var(--color2);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-header a{
-    color: var(--negro);
-    position: relative;
 
+.logo{
+    font-size: 3.6rem;
 }
-header a:hover{
-    color: var(--color3);
+
+#menu-toggle{
+    display: none;
+}
+header nav{
+    width: 100%;
+    margin-top: 20px;
+}
+header ul{
+    width: 100%;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-around;
+}
+
+header li{
+    list-style: none;
+}
+
+header a{
+    position: relative;
+}
+header a:not(#excluirSubrayado):hover{
+    color: var(--colorPrincipalDiluido);
 }
 header a:not(#excluirSubrayado)::after{
     content: '';
@@ -110,513 +159,215 @@ header a:not(#excluirSubrayado)::after{
     left: 0;
     width: 0;
     height: 1px;
-    background-color: var(--negro);
+    background-color: black;
     transition: width 0.3s ease;
 
 }
 header a:not(#excluirSubrayado):hover::after{
     width: 100%;
-    background-color: var(--color3);
+    background-color: var(--colorPrincipalDiluido);
 }
 
 
-nav{
+header .barraDecorativa{
     width: 100%;
-    
-}
-nav ul{
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-nav ul li{
-    list-style: none;
-    margin-right: 20px;
-}
-
-
-nav ul li:last-child{
-    margin-right: 0;
-}
-
-.menuMovil{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
-    
-}
-.rellenoHeader{
-    margin-top: 20px;
     height: 20px;
-    width: 100%;
-    background-color: var(--color2);
-}
-/*Estilos generales section*/
-
-section{
-    display: flex;
-    margin: 0px 5%;
-    height: 100vh;
-    flex-direction: row;
-    justify-content: center;
-    
-}
-.contenedor{
-    display: flex;
-    justify-content: space-between;
-    
-    height: 100%;
-    width: 100%;
-
-}
-section div{
-    margin-right: 20px;
-
+    margin-top: 20px;
+    background-color: var(--colorPrincipal);
 }
 
-section:not(.hero) div:last-child{
-    margin-right: 0px !important;
-    
-    
-    
-}
-.text{
-    flex-direction: column;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    width: 50%;
-    
 
-}
-.fondo{
-    background-color: var(--color3);
-    border-radius: 10px;
-    padding: 40px 50px ;
-}
-.image{
-    display: flex;
-    background-size: contain;
-    background-position: center center;
-    background-repeat: no-repeat;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-}
 
-#menu-toggle{
-    display: none;
-    font-size: 1.8rem;
-    background: none;
-    border: none;
-
-}
-/*Estilos hero*/
-
+/*Estilos Hero*/
 
 .hero{
-    position: relative;
-    height: 100vh;
-    margin-top: 35px;
-    margin-bottom: 35px;
-    flex-direction: column;
-
-    overflow: hidden;
-    
+    justify-content: space-around;
+    flex-direction: column;;
+    margin-top: 5%;
 }
 
-
-#videoHero{
+.hero #contenedorVideoHero{
     
-    
-    top: 0;
-    left: 0;
+    height: 60%;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
     
     
 }
 
-.hero .contenedor{
-    flex-direction: column;
-    height: 100%;
-}
-
-#contenedorVideoHero{
-    display: flex;
-    height: 65%;
-    
-}
-.imageHero{
-    background-image: url(img//imagenHero.jpg);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 50%;
-    justify-content: center;
-    align-items: center;
+.hero #contenedorContenidoHero{
     margin-top: 20px;
-}
-.heroContent{
-    height: 35%;
-    display: flex;
-    position: relative;
-    z-index: 1;
-    flex-direction: column;
+    height: 50%;
     text-align: center;
-    align-items: center;
-    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    
 }
-.botones{
+
+.hero #botonera{
     display: flex;
     flex-direction: row;
-    justify-content:space-around;
+    justify-content: space-between;
     align-items: center;
-    width: 50%;
+    width: 100%;
     
-    padding: 10px 0px;
-    margin-top: 10px;   
+}
+
+/*Estilos seccion beneficios*/
+
+
+/*About Us*/
+/* Estilos comunes para los h1, h2 y p dentro de .aboutUs, .info y .beneficios */
+section.aboutUs h1, section.aboutUs p,
+section.info h1, section.info p,
+section.beneficios h1, section.beneficios p {
+    margin-top: 12px;
+}
+
+/* Estilos específicos para h2 */
+section.aboutUs h2, section.info h2, section.beneficios h2 {
+    font-size: 1.5em;
+}
+
+/* Estilos específicos para h1 */
+section.aboutUs h1, section.info h1, section.beneficios h1 {
+    font-size: 3em;
+}
+
+/* Estilos específicos para p */
+section.aboutUs p, section.info p, section.beneficios p {
+    font-size: 1.2em;
     
+}
+
+section.beneficios li{
+    list-style: none;
+    line-height: 1.6;
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+
+/*Estilos seccion reseñas*/
+section.reseñas{
+    display: none;
+}
+section.reseñas #tarjeta{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 75%;
+    width: 20%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+}
+
+section.reseñas div.contenedor #imagen{
+    width: 80%;
+    height: 40%;
+    align-items: center;
+    display: flex;
+    margin-bottom: 30%;
+    
+}
+section.reseñas div.contenedor #texto{
+    text-align: center;
+}
+/*Estilos contactanos*/
+.contactInfo{
+   display: flex;
+   flex-direction: column;
+}
+.contactInfo form{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--colorPrincipalFuerte);
+    padding: 4% 2%;
     border-radius: 10px;
-        
-}
-
-.botones a{
-    display: inline-block;
-    padding: 10px 15px;
-    background-color: var(--color2);
-    color: var(--negro);
-    text-decoration: none;
+ }
+ .contactInfo label{
+    color: var(--colorFondo);
+    margin-bottom: 5px;
+ }
+ .contactInfo h3{
+    color: var(--colorFondo);
+    margin-bottom: 25px;
+ }
+ .contactInfo input{
+    height: 35;
+ }
+ .contactInfo input, textarea{
+    margin-bottom: 15px;
+    resize: none;
+    border: none;
     border-radius: 5px;
-    text-align: center; 
     
-}
-.botones a:hover{
-    background-color: var(--color3);
+    padding: 5px;
+ }
+input:focus::placeholder,
+textarea:focus::placeholder {
+    color: transparent; 
 }
 
-.botones button{
+.contactInfo button{
+    border: none;
+    background-color: var(--colorPrincipalFuerte);
+    border: 1px solid var(--colorPrincipalDiluido);
+    color: var(--colorPrincipalDiluido);
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 0 0 transparent;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in;
+    position: relative;
     display: inline-block;
     text-align: center;
-    
-    width: 200px;
-    padding: 10px;
-    flex-shrink: 0px;
 }
 
-/*Estilos seccion info*/
-
-.slider-container {
-    flex-direction: column;
-    
-    display: flex;
-    position: relative;
-    width: 50%;
-    overflow: hidden; /* Oculta las imágenes fuera del contenedor */
-    justify-content: center;
-    margin-right: 0px;
-  }
-
-  
-  .slider {
-    width: 100%;
-    display: flex;
-    object-fit:fill;
-    transition: transform 0.5s ease; /* Desliza las imágenes */
-  }
-  
-  .slide {
-    flex: 1;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  #info button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro para los botones */
-    color: white;
-    font-size: 24px;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-  }
-  
-  #info button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-  
-  .prev {
-    left: 0;
-  }
-  
-  .next {
-    right: 0;
-  }
-  
-#info .image{
-    background-image: url("img/placeHolderVertical.png");
-}
-/*Estilos seccion beneficios*/
-#beneficios{
-    flex-direction: column;
-    align-items: center;
-}
-#beneficios .image{
-    background-image: url(img/placeHolderHoriz.png);
-    height: 50%;
-    width: 100%;
-}
-/*Estilos seccion about us*/
-#aboutUs .contenedor{
-    align-items: center;
-}
-#aboutUs .image{
-    background-image: url(img/placeHolderCuadrado.png);
-    height: 60vh;
-
-}
-#aboutUs .fondo{
-    background-color: var(--color2);
-}
-/*Estilos seccion reseñas*/
-#reseñas{
-    display: flex;
-    align-items: center;
+.contactInfo button:hover{
+    color: var(--colorPrincipalFuerte);
+    box-shadow: 0 0 30px 0 rgba(8, 61, 7, 0.5);
+    transition: all 0.2s ease-out;
+    background-color: var(--colorPrincipalDiluido);
 }
 
-#reseñas .contenedor{
-    justify-content: space-around;
-    display: flex;
-    height: 100%;
-
+.contactInfo button:hover::before{
+    animation: shine 0.5s 0s linear;
 }
-.tarjetas{
-    height: 70%;
-    display: flex;
-    justify-content: space-around;
-    align-items: start;
-    flex-direction: column;
-    margin-right: 10%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    padding: 10px;
-    width: 17%;
-}
-.contenidoTarjeta{
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 50%;
-    width: 100%;
+.contactInfo button:active{
+    box-shadow: 0 0 0 0 transparent;
+    transition: box-shadow 0.2s ease-in;
 }
 
-#reseñas .image{
-    height: 50%;
-    width: 100%;
-    margin: 0px;
-    background-image: url(img/placeHolderCuadrado.png);
-}
-/*Estilos seccion contacto*/
-
-#contactInfo{
-    
-    margin: 20px 0px;
-    height: 80vh;
-}
-
-.formContainer{
-    background-color: var(--color3);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    width: 400px;
-    box-sizing: border-box;
-    overflow: hidden;
-    
-}
-
-label{
+.contactInfo button::before{
+    content: '';
     display: block;
-    font-weight: bold;
-    margin: 10px 0 5px;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+
+    opacity: 0;
+    background: white;
+    box-shadow: 0 0 15px 3px white;
+    transform: skewX(-20deg);
 }
-input, textarea {
-    width: 90%;
-    padding: 10px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
-}
-input:focus, textarea:focus {
-    border-color: #57872b;
-    outline: none;
-    box-shadow: 0 0 5px rgba(87, 135, 43, 0.5);
-}
-
-.formContainer button{
-    margin-top: 10px;
-    width: 100%;
-}
-.formContainer button:hover{
-    transform: scale(1.5);
-}
-
-/*Animacion de texto temblarin*/
-@keyframes tremble {
-    0% {
-        transform: translateX(0);
-    }
-    25% {
-        transform: translateX(-5px);
-    }
-    50% {
-        transform: translateX(5px);
-    }
-    75% {
-        transform: translateX(-5px);
-    }
-    100% {
-        transform: translateX(5px);
-    }
-}
-
-.temble:hover {
-    animation: tremble 0.5s ease-in-out infinite;
-}
-
-
-@media (max-width:760px){
-    section{
-        margin: 0px;
-    }
-    .imageHero{
-        margin-right: 0px;
-    }
-    .heroContent{
-        margin: 10px 0px;
-
+@keyframes shine{
+    from{
+        opacity: 0;
+        left:0%;
     }
 
-    .botones{
-        flex-direction: column;
-        background-color: var(--color5);
-        box-shadow: none;
-        border-radius: 0%;
-        margin: 0px;
-        height: 55%;
-        width: 100%;
-        gap:10px
-    }
-    .button{
-        margin-bottom: 20px;
-    }
-    .contenedor{
-        flex-direction: column;
-        text-align: center;
-        justify-content: center;
-        
+    50%{
+        opacity: 1;
     }
 
-    #reseñas .image{
-        display: none;
-    }
-    .slider-container{
-        height: 100%;
-        width: 100%;
-    }
-    #info .text{
-        width: 100%;
-    }
-    .text{
-        width: 100%;
-        margin-right: 0;
-    }
-    .fondo{
-        border-radius: 0px;
-    }
-    .tarjetas{
-        width: 100%;
-        height: 33%;
-        margin: 0px;
-        margin-bottom: 20px;
-        padding: 10px 0px;
-        justify-content: start;
-
-    }
-    .formContainer{
-        width: 100%;
-        border-radius: 0;
-        box-shadow: 0;
-    }
-
-    #header{
-        padding: 15px 0px;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .menuMovil{
-        display: flex;
-        justify-content: space-between;
-        padding: 0px 0px;
-        width: 100%;
-    }
-    nav{
-        z-index: 100;
-        position: absolute;
-        flex-direction: column;
-        transform: translate(-800px,0);
-        transition: transform .3s ease;
-        background-color: var(--color5);
-        top: 0;
-        padding: 0;
-        left: 0;
-        display: flex;
-        justify-content: flex-start;
-        height: 100%;
-        width: 60%;
-    }
-    nav ul{
-        flex-direction: column;
-        display: flex;
-    }
-    nav li{
-        padding: 1em;
-    }
-    nav li a{
-        text-align: center;
-        padding: 1em;
-    }
-    nav a{
-        color: var(--color1);
-    }
-    #menu{
-        
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background: #57872b;
-        width: 100%;
-        text-align: center;
-
-    }
-
-    nav.active {
-        transform: translate(0,0);
-    }
-
-    #menu-toggle{
-        display: block;
+    to{
+        opacity: 0;
+        left: 100%;
     }
 }
