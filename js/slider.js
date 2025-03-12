@@ -1,33 +1,49 @@
-let currentSlide = 0;
+const slider = document.querySelector(".slider");
+const images = document.querySelectorAll(".slider img");
+let distanciaDesplazamiento = images[0].offsetHeight;
+console.log(distanciaDesplazamiento)
 
-function moveSlide(direction) {
-  const slides = document.querySelectorAll('.slide');
-  const totalSlides = slides.length;
 
-  currentSlide = (currentSlide + direction + totalSlides) % totalSlides; // Asegura que el índice sea válido (circular)
-  const slider = document.querySelector('.slider');
-  slider.style.transform = `translateX(-${currentSlide * 100}%)`; // Mueve el slider
-}
+let index = 0;
 
-let autoplayInterval = null;
-
-function startAutoplay(interval) {
-   stopAutoplay(); // Detiene cualquier autoplay anterior para evitar múltiples intervalos.
-   autoplayInterval = setInterval(() => {
-      moveSlide(1); // Navega a la siguiente imagen cada intervalo de tiempo.
-   }, interval);
-}
-
-function stopAutoplay() {
-   clearInterval(autoplayInterval);
-}
-
-// Iniciar autoplay con un intervalo de 3 segundos.
-startAutoplay(5000);
-
-// Opcional: Detener autoplay cuando el usuario interactúa con los botones de navegación.
-/*
-document.querySelectorAll('.nav-button').forEach(button => {
-    button.addEventListener('click', stopAutoplay);
+document.getElementById("next").addEventListener("click", () => {
+  if (index < images.length - 1) index++;
+  else index = 0;
+  slider.style.transform = `translateY(-${index * distanciaDesplazamiento}px)`;
 });
-*/
+
+document.getElementById("prev").addEventListener("click", () => {
+  if (index > 0) index--;
+  else index = images.length - 1;
+  slider.style.transform = `translateY(-${index * distanciaDesplazamiento}px)`;
+});
+
+window.addEventListener("resize",calcularAlturaSlider);
+
+function calcularAlturaSlider(){
+   distanciaDesplazamiento = images[0].offsetHeight;
+   console.log(distanciaDesplazamiento)
+   
+}
+
+
+function cambiarImagenesCon(){
+   let imagenesCon =['img/placeHolderCuadrado.png','img/placeHolderCuadrado.png','img/placeHolderCuadrado.png']
+   let indice=0
+
+   for (let i=0; i<images.length; i++){
+      images[i].src=imagenesCon[i]
+   }
+   slider.style.border = "1px solid var(--verdePastel)"
+   console.log("Se cambiaron las imagenes correctamente!!!")
+}
+
+function cambiarImagenesSin(){
+   let imagenesSin =['img/placeHolderCuadrado.png','img/placeHolderCuadrado.png','img/placeHolderCuadrado.png']   
+   let indice=0
+
+   for (let i=0; i<images.length; i++){
+      images[i].src=imagenesSin[i]
+   }
+   console.log("Se cambiaron las imagenes correctamente!!!")
+}
