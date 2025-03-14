@@ -16,6 +16,12 @@
     
     
 }
+
+#menu-toggle{
+    background: transparent;
+    border: none;
+    font-size: 2em;
+}
 html body{
     height: 100%;
 }
@@ -190,7 +196,7 @@ header .logo img{
     border-radius: 0;
     box-shadow: none;
     position: absolute;
-    bottom: 100%;
+    margin-bottom: 100px;
     width: 100%; 
     
 }
@@ -712,6 +718,40 @@ textarea:focus::placeholder {
         height: auto;
         min-width: 0;
         padding: 10px 40px;
+    }
+
+    header{
+        height: 100px;
+    }
+    header .linkLogo{
+        justify-content: start;
+        display: inline-block;
+    }
+    header .logo{
+        width: 30%;
+    }
+    header .logo img{
+        margin-bottom: 0;
+    }
+    header .logo:hover{ 
+        .logoFondo{
+            clip-path: inset(0 0 0 0);
+        }
+        .logoTexto{
+            transform: scale(1);
+        }
+    }
+    header .menuMovil{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+    }
+    nav{
+        display: none;
+    }
+    #menu-toggle{
+        display: block;
     }
     .slider{
         display: block;
