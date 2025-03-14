@@ -451,6 +451,7 @@ header .barraDecorativa{
     transition: transform 0.5s ease-in-out;
     width: 100%;
     position: relative;
+    flex-wrap: nowrap;
 
 }
 
@@ -791,6 +792,7 @@ textarea:focus::placeholder {
     }
     .slider{
         display: block;
+        
     }
 
     .slider img:hover{
