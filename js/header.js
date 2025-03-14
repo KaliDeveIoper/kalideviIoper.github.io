@@ -15,14 +15,17 @@ window.addEventListener("scroll", function () {
             // Si el usuario baja más de 5px, ocultamos el header
             ocultarHeader()
             this.clearInterval(autoHide)
-        } else if (currentScrollY < lastScrollY - 5){
+            
+        } else if (currentScrollY < lastScrollY - 5 && currentScrollY != 0){
             mostrarHeader()
             reiniciarAutoOcultado()
+            
         } else if (currentScrollY === 0) {
             // Si el usuario sube más de 5px o está en la parte superior, mostramos el header
             mostrarHeader()   
             this.clearInterval(autoHide)
             autoHide=null
+            
         }
 
         lastScrollY = currentScrollY; // Guardamos la posición actual del scroll
