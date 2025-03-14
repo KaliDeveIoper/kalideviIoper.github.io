@@ -5,6 +5,7 @@ var enlaces = document.querySelectorAll('nav a'); // Seleccionar todos los enlac
 
 menu.addEventListener('click', function (e) {
     /* Abrir menú */
+    
     drawer.classList.toggle('active');
 
     /* Oscurecer contenido al abrir el menú */

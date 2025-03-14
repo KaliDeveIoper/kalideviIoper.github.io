@@ -729,6 +729,7 @@ textarea:focus::placeholder {
     }
     header .logo{
         width: 30%;
+        max-width: 300px;
     }
     header .logo img{
         margin-bottom: 0;
@@ -747,8 +748,41 @@ textarea:focus::placeholder {
         align-items: center;
         flex-direction: row;
     }
-    nav{
+    header nav{
+        margin-top: 0;
+        z-index: 100;
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: white;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        transform: translate(-600px, 0);
+        transition: transform .6s ease;
+    }
+    .oscurecer {
+        background-color: rgba(0, 0, 0, .3);
+        z-index: 99;
+        position: absolute;
+        height: 100%;
+        width: 100%;
         display: none;
+    }
+    nav ul{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+       
+    }
+    nav ul li{
+        margin: 10px 0;
+    }
+    .active{
+        transform: translate(0,0);
     }
     #menu-toggle{
         display: block;
@@ -756,9 +790,7 @@ textarea:focus::placeholder {
     .slider{
         display: block;
     }
-    .slider img{
-        
-    }
+
     .slider img:hover{
         transform: scale(1);
     }
