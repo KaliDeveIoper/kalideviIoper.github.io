@@ -73,6 +73,7 @@ section{
 .contenedor{
     margin: 0 auto;
     width: 40%;
+    flex-wrap: wrap;
     
 }
 
@@ -713,11 +714,12 @@ textarea:focus::placeholder {
         height: 20%;
     }
     .beneficios #seccion1 a{
-        margin: 0 !important;
+        margin: 10px 0 0 0 !important;
         width: 20%;
         height: auto;
         min-width: 0;
         padding: 10px 40px;
+        
     }
 
     header{
@@ -729,7 +731,7 @@ textarea:focus::placeholder {
     }
     header .logo{
         width: 30%;
-        max-width: 300px;
+        max-width: 100px;
     }
     header .logo img{
         margin-bottom: 0;
