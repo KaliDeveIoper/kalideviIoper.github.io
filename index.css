@@ -161,13 +161,19 @@ img.imagenTexto{
 
 header{
     width: 100%;
-    height: 370px;
+    height: 150px;
     display: flex;
     flex-direction: column;
     justify-content:center;
     align-items: center;
-    padding: 0 0;
+    padding: 0 2.5%;
     padding-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: var(--colorFondo);
+    transition: top 0.3s ease-out;
 
     
     
@@ -188,7 +194,7 @@ header .logo{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 20%;
+    width: 12%;
     position: relative;
     cursor: pointer;
     
@@ -197,7 +203,7 @@ header .logo img{
     border-radius: 0;
     box-shadow: none;
     position: absolute;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
     width: 100%; 
     
 }
@@ -220,6 +226,9 @@ header .logo:hover {
     }
 }
 
+.hidden{
+    top: -200px;
+}
 
 #menu-toggle{
     display: none;
@@ -277,7 +286,7 @@ header .barraDecorativa{
     justify-content: space-around;
     flex-direction: column;
     margin-top: 0;
-    
+    padding-top: 200px;
 }
 
 .hero #contenedorVideoHero{
