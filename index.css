@@ -68,12 +68,18 @@ section.Info{
     background-color: var(--fondo1);
     gap: 10%;
 }
-
+section.Info .logo-container{
+    width: 40%;
+    height: 20%;
+    position: relative;
+    margin-bottom: 50px;
+    top: -60px;
+}
 .contenido{
     display: flex;
     flex-direction: row;
     height: 90%;
-    align-items: start;
+    align-items: center;
     
     
 }
