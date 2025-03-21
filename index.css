@@ -1,0 +1,153 @@
+:root{
+    --fondo1: #fdf4e5;
+    --fondo2:#dee9de;
+    --colorh1: #3bb371;
+    --fondoTarjetas:#2d6638;
+}
+@font-face {
+    font-family: 'TAN-NIMBUS';
+    src: url('assets/fonts/TAN-NIMBUS.ttf') format('truetype'); /* Usa la ruta correcta a tu archivo */
+  }
+@font-face {
+    font-family: 'PERANDORY';
+    src: url('assets/fonts/Perandory-Condensed.otf') format('truetype'); /* Usa la ruta correcta a tu archivo */
+  }  
+
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: #fdf4e5;
+}
+p{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: justify;
+}
+.container, section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    gap: 10px; /* Espaciado entre elementos */
+}
+
+section{
+    height: 100vh;
+    padding: 0 5%;
+}
+
+.logo-container{
+    width: 10%;
+    height: 10%;
+    position: relative;
+}
+.logo-container img{
+    position: absolute;
+}
+img{
+    width: 100%;
+}
+
+.btn{
+    text-decoration: none;
+    background-color: var(--colorh1);
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+/*
+==========Estilos secccion info============= 
+*/
+
+section.Info{
+    margin-top: 1%;
+    justify-content: flex-start;
+    background-color: var(--fondo1);
+    gap: 10%;
+}
+
+.contenido{
+    display: flex;
+    flex-direction: row;
+    height: 90%;
+    align-items: start;
+    
+    
+}
+section.Info .contenido{
+    gap: 15%;
+}
+.columna1{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    gap: 0;
+    position: relative;
+}
+.columna1 h1,h2,p{
+    margin-bottom: 50px;
+}
+.columna2{
+    width: 40%;
+}
+.columna2 img{
+    position: relative;
+    top: -60px;
+    
+}
+.columna1 h1{
+    font-family: 'TAN-NIMBUS';
+    font-size: 60px;
+    margin-bottom: 0px;
+    color: var(--colorh1);
+    letter-spacing: 5px;
+}
+.columna1 h2{
+    font-family: 'PERANDORY';
+    position: relative;
+    top: -15px;
+    font-size: 45px;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+}
+.columna2 p{
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/*
+==========Estilos secccion Beneficios============= 
+*/
+
+section.Beneficios{
+    padding-top: 1%;
+    background-color: var(--fondo2);
+}
+
+.containerTarjetas{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 10%;
+    
+}
+
+.tarjeta{
+    background-color: var(--fondoTarjetas);
+    width: 20%;
+    height: 100%;
+    min-width: 100px;
+    min-height: 440px;
+    padding: 1% 2%;
+    border-radius: 10px;
+    
+}
+.tarjeta img{
+    height: 50%;
+    width: 40%;
+}
