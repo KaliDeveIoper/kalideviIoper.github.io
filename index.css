@@ -59,6 +59,11 @@ img{
     border-radius: 10px;
     padding: 10px;
 }
+
+.negritas{
+    font-weight: 700;
+}
+
 /*
 ==========Estilos secccion info============= 
 */
@@ -178,12 +183,15 @@ section.Ventas{
     justify-content: start;
 }
 section.Ventas .columna1{
-    margin-top: 10px;
+    margin-top: 50px;
     
 }
-
+section.Ventas .columna1 h2{
+    margin-bottom: 5px;
+    
+}
 section.Ventas .contenido{
-    border-top: 1px solid black;
+    border-top: 1px solid #31241e;
     height: 60%;
     gap: 50px;
     width: 100%;
@@ -218,7 +226,7 @@ section.Ventas .contenido{
     object-fit: cover;
     width: 100%;
     height: 60%;
-    margin-bottom: 30px;
+    margin-bottom: 5px;
     
     
 }
@@ -275,6 +283,29 @@ section.Contactanos .container{
     height: 100%;
     width: 40%;
     flex-direction: column;
+
+}
+section.Contactanos .columna1{
+    text-align: left;
+    align-items: start  ;
+    
+
+}
+.noSalto{
+    margin-bottom: 0;
+}
+section.Contactanos .columna1 h1,p{
+    margin-bottom: 20px;
+    
+
+}
+section.Contactanos .columna1,p{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: italic;
+    color: black;
+    
 
 }
 section.Contactanos form{
