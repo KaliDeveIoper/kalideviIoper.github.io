@@ -19,6 +19,7 @@
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 body{
     background-color: #fdf4e5;
@@ -38,7 +39,7 @@ p{
 }
 
 section{
-    height: 100vh;
+    min-height: 100vh;
     padding: 0 5%;
 }
 
@@ -270,20 +271,27 @@ section.Ventas .columna1 h2{
 section.Ventas .contenido{
     border-top: 1px solid #31241e;
     height: 60%;
-    gap: 50px;
+    gap: 10px;
     width: 100%;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    
 }
 
 .tarjetaVenta{
+    flex: 1 1 calc(25% - 10px);
     display: flex;
     flex-direction: column;
-    padding: 10px 10px;
-    margin-top: 20px;
-    width: 20%;
+    padding: 5px 10px;
+    margin-top: 40px;
+    
     height: 100%;
-    justify-content: start;
+    min-height: 20%;
+    max-height: 100%;
+    justify-content: center;
     text-align: center;
     background-color: white;
+    transition: width 1s ease;
 }
 
 .tarjetaVenta p{
@@ -303,7 +311,7 @@ section.Ventas .contenido{
     flex-wrap: nowrap;
     object-fit: cover;
     width: 100%;
-    height: 60%;
+    height: 65%;
     margin-bottom: 5px;
     
     
@@ -318,7 +326,7 @@ section.Reseñas{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 130vh;
+    min-height: 130vh;
 }
 section.Reseñas .titulo{
     display: flex;
@@ -337,13 +345,14 @@ section.Reseñas img{
 section.Reseñas .tarjetas{
     height: 60%;
     gap: 50px;
+    margin: 30px 0px;
 }
 
 section.Reseñas .tarjetas .tarjetaReseña{
     display: flex;
     flex-direction: column;
     height: 50%;
-    padding: 0 100px;
+    padding: 100px;
     background-color: white;
     box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.2);
     max-height: 200px;
