@@ -1,9 +1,11 @@
 :root{
+    --hoverFondo1: #60ff04;
     --fondo1: #fdf4e5;
     --fondo2:#dee9de;
     --colorh1: #3bb371;
     --fondoTarjetas:#2d6638;
     --fondoFormulario: #d1c8c1;
+    --hover: #000000;
 }
 @font-face {
     font-family: 'TAN-NIMBUS';
@@ -44,9 +46,83 @@ section{
     width: 10%;
     height: 10%;
     position: relative;
+    animation: 3s ease-in 1s infinite cambioEscala;
+    margin-top: 10px;
+   
+    
 }
+
+
+
+.sombra {
+    width: 50% ;
+    min-width: 100px !important;
+    max-width: 100px !important;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    bottom: -65px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    filter: blur(5px);
+    will-change: transform;
+    animation: none !important;
+}
+.raise:hover{
+    box-shadow: 0 0.7em 1em -0.6em var(--colorh1);
+    -webkit-transform: translateY(-0.25em);
+    transform: translateY(-0.25em);
+}
+.close{
+    transition: 0.25s;
+}
+.close:hover{
+    box-shadow: 
+        inset -7.5em 0 0 0 var(--hover), 
+        inset 7.5em 0 0 0 var(--hover);
+    color: white;
+}
+.pulse:hover{
+    animation: pulse 1s;
+    box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+    cursor: pointer;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 var(--hover);
+      }
+}
+/*
+.sombra {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    border-radius: 50%;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.8);
+}
+*/
+
 .logo-container img{
     position: absolute;
+    
+}
+
+@keyframes cambioEscala {
+    0%{
+        
+        transform: translateY(0px) scale(1);
+    }
+    50%{
+        
+        transform: translateY(-10px) scale(1.2);
+    }
+    100%{
+        
+        transform: translateY(0px) scale(1);
+    }
+    
 }
 img{
     width: 100%;
@@ -58,6 +134,7 @@ img{
     color: white;
     border-radius: 10px;
     padding: 10px;
+    transition: 0.25s;
 }
 
 .negritas{
@@ -213,13 +290,14 @@ section.Ventas .contenido{
    margin-bottom: 10px;
 }
 .tarjetaVenta a{
-    background-color: gray;
+    background-color: #d1c8c1;
     flex-wrap: nowrap;
     margin-top: 5px;
     padding: 10px 0;
     width: 100%;
     text-decoration: none;
     color: black;
+    font-weight: 700;
 }
 .tarjetaVenta img{
     flex-wrap: nowrap;
